@@ -1,12 +1,11 @@
-class DataStore{
-    //Collection to store stock objects
-    //Collection to store stock objects mapped by exchange,
-    constructor(){
-        this.stockList= [];
-        this.stockByExchange = {};        
-    }
+class DataStore {
 
-    addStock(stock) {
+  constructor() {
+    this.stockList = [];
+    this.stockByExchange = {};
+  }
+
+  addStock(stock) {
     this.stockList.push(stock);
 
     if (!this.stockByExchange[stock.exchange]) {
@@ -15,7 +14,7 @@ class DataStore{
     this.stockByExchange[stock.exchange].push(stock);
   }
 
-   getStocksByExchange(exchange) {
+  getStocksByExchange(exchange) {
     if (exchange === 'all') {
       return this.stockList;
     }

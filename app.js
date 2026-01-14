@@ -38,7 +38,7 @@ $(document).ready(function () {
       `);
     });
   }
-//update random values every 3secs
+  //update random values every 3secs
   function refreshData() {
     dataStore.stockList.forEach(stock => {
       stock.updateRandomValues();

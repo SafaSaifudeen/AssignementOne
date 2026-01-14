@@ -1,17 +1,17 @@
 table {
-  width: 1000px;        /* Fixed table width */
-  table-layout: fixed;  /* Prevent resizing */
+  width: 1000px;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ccc;
   padding: 6px;
-  height: 32px;         /* Fixed row height */
+  height: 32px;
   white-space: nowrap;
 }
 
 select {
   margin-bottom: 10px;
 }
-

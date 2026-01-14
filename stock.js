@@ -1,17 +1,16 @@
-class Stock{
-    //symbol (string), exchange (string), open (number), high (number), low (number), close (number), bid (number), ask (number), trade date (date)
-    constructor (symbol, exchange){
-        this.symbol = symbol;
-        this.exchange = exchange;
-        this.open= 0;
-        this.high =0;
-        this.low = 0;
-        this.close = 0;
-        this.bid = 0; 
-        this.ask = 0;
-        this.tradeDate = new Date();
-    }
-    updateRandomValues() {
+class Stock {
+  constructor(symbol, exchange) {
+    this.symbol = symbol;
+    this.exchange = exchange;
+    this.open = 0;
+    this.high = 0;
+    this.low = 0;
+    this.close = 0;
+    this.bid = 0;
+    this.ask = 0;
+    this.tradeDate = new Date();
+  }
+  updateRandomValues() {
     try {
       this.open = this._randomNumber();
       this.high = this._randomNumber();
@@ -24,9 +23,8 @@ class Stock{
       console.error('Stock update failed', e);
     }
   }
-      _randomNumber() {
-        //console.log('Random number generated:', value, typeof value);
-        return +(Math.random() * 100).toFixed(2);
-    }
+  _randomNumber() {
+    return +(Math.random() * 100).toFixed(2);
+  }
 
 }
