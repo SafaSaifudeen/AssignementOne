@@ -1,0 +1,17 @@
+table {
+  width: 1000px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  height: 32px;
+  white-space: nowrap;
+}
+
+select {
+  margin-bottom: 10px;
+}
