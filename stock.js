@@ -14,8 +14,8 @@ class Stock{
     updateRandomValues() {
     try {
       this.open = this._randomNumber();
-      this.high = this.open + this._randomNumber();
-      this.low = this.open - this._randomNumber();
+      this.high = this._randomNumber();
+      this.low = this._randomNumber();
       this.close = this._randomNumber();
       this.bid = this._randomNumber();
       this.ask = this._randomNumber();
@@ -24,9 +24,9 @@ class Stock{
       console.error('Stock update failed', e);
     }
   }
-      _randomNumber() {
-        //console.log('Random number generated:', value, typeof value);
-        return +(Math.random() * 100).toFixed(2);
-    }
+  _randomNumber() {
+    //console.log('Random number generated:', value, typeof value);
+    return (Math.random() * 100).toFixed(2);
+  }
 
 }

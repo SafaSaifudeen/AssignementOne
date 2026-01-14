@@ -1,19 +1,17 @@
 $(document).ready(function () {
   const dataStore = new DataStore();
 
-  const stockPairs = [
-    { exchange: 'TDWL', symbol: '1010' },
-    { exchange: 'TDWL', symbol: '1020' },
-    { exchange: 'TDWL', symbol: '1090' },
-    { exchange: 'DFM', symbol: 'EMAAR' },
-    { exchange: 'DFM', symbol: 'DFM' },
-    { exchange: 'DFM', symbol: 'DIB' }
-  ];
+  const stockPairs = {
+    'TDWL': ['1010', '1020', '1090'],
+    'DFM': ['EMAAR', 'DFM', 'DIB']
+  };
 
-  stockPairs.forEach(item => {
-    const stock = new Stock(item.symbol, item.exchange);
-    stock.updateRandomValues();
-    dataStore.addStock(stock);
+  Object.keys(stockPairs).forEach(exchange => {
+    stockPairs[exchange].forEach(symbol => {
+      const stock = new Stock(symbol, exchange);
+      stock.updateRandomValues();
+      dataStore.addStock(stock);
+    });
   });
 
   $('#exchangeSelect').on('change', function () {
@@ -40,7 +38,7 @@ $(document).ready(function () {
       `);
     });
   }
-//update random values every 3secs
+
   function refreshData() {
     dataStore.stockList.forEach(stock => {
       stock.updateRandomValues();

@@ -16,6 +16,9 @@ class DataStore{
   }
 
    getStocksByExchange(exchange) {
+    if (exchange === 'all') {
+      return this.stockList;
+    }
     return this.stockByExchange[exchange] || [];
   }
 }
